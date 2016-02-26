@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const bodyParser = require('body-parser');
 const path = require('path');
 const sqlite3 = require('sqlite3');
 
@@ -12,28 +13,31 @@ const app = express();
 
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.render('index');
-  // db.run(`INSERT INTO weight VALUES (1, 1, 'March 17', 150)`, (err, data) => {
-  //   if (err) throw err;
-
-  //   res.send(data);
-  // });
-
-  // db.all(`SELECT * FROM user`, (err, data) => {
-  //   if (err) throw err;
-
-  //   res.send(data);
-  // })
 });
 
 
 app.post('/', (req, res) => {
-  const username = req.body.username;
+  const username = req.body.user;
+  const steps = req.body.steps;
+  const weight = req.body.weight;
+  const password = req.body.pass;
+
+
+
+  db.run(`INSERT INTO user
+    (userName, password)
+    VALUES ('${username}', '${password}')`,
+    (err, data) => {
+    if (err) throw err;
+
+    res.send(data);
+  });
 });
-
-
 
 app.get('/profile', (req, res) => {
   res.render('profile');
