@@ -15,17 +15,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
   res.render('index');
-  db.run(`INSERT INTO weight VALUES (1, 1, 'March 17', 150)`, (err, data) => {
-    if (err) throw err;
+  // db.run(`INSERT INTO weight VALUES (1, 1, 'March 17', 150)`, (err, data) => {
+  //   if (err) throw err;
 
-    res.send(data);
-  });
+  //   res.send(data);
+  // });
 
-  db.all(`SELECT * FROM user`, (err, data) => {
-    if (err) throw err;
+  // db.all(`SELECT * FROM user`, (err, data) => {
+  //   if (err) throw err;
 
-    res.send(data);
-  })
+  //   res.send(data);
+  // })
 });
 
 
