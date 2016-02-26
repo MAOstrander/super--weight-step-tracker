@@ -29,7 +29,10 @@ app.post('/', (req, res) => {
 
 
 
-  db.run(`INSERT INTO user VALUES (2, '${username}', '${password}')`, (err, data) => {
+  db.run(`INSERT INTO user 
+    (userName, password)
+    VALUES ('${username}', '${password}')`,
+    (err, data) => {
     if (err) throw err;
 
     res.send(data);
