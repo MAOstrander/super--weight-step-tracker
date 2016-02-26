@@ -26,6 +26,10 @@ app.get('/', (req, res) => {
   // })
 });
 
+app.get('/profile', (req, res) => {
+  res.render('profile');
+});
+
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`);
 })
