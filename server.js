@@ -9,11 +9,21 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
+app.set('view engine', 'jade');
 
 app.get('/', (req, res) => {
-  db.all(`SELECT * FROM user`, (err, data) => {
-    console.log(data)
-  })
+  res.render('index');
+  // db.run(`INSERT INTO weight VALUES (1, 1, 'March 17', 150)`, (err, data) => {
+  //   if (err) throw err;
+
+  //   res.send(data);
+  // });
+
+  // db.all(`SELECT * FROM user`, (err, data) => {
+  //   if (err) throw err;
+
+  //   res.send(data);
+  // })
 });
 
 app.listen(PORT, () => {
