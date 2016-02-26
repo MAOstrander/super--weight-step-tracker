@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const path = require('path');
 const sqlite3 = require('sqlite3');
 
 const db = new sqlite3.Database('./db/TrackerThatTracks.db');
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.set('view engine', 'jade');
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
   res.render('index');
@@ -26,8 +28,15 @@ app.get('/', (req, res) => {
   })
 });
 
+
 app.post('/', (req, res) => {
   const username = req.body.username;
+});
+
+
+
+app.get('/profile', (req, res) => {
+  res.render('profile');
 });
 
 

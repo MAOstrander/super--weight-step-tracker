@@ -4,15 +4,13 @@ block body
   h1 Super Weight Tracker!
 
   .input-form
+    h2 Login Here
     form(method='POST')
       .form-group
-        label Name
-        input(type='text', name='username', placeholder='Type Username Here')
+        label Username
+        input(type='text', name='user', placeholder='Type Username Here' required)
       .form-group
-        label Steps
-        input(type='number', name='steps', placeholder='How many steps did you take?')
+        label Password
+        input(type='password', name='pass' required)
       .form-group
-        label Weight
-        input(type='number', name='weight', placeholder='How much do you weigh?')
-      .form-group
-        input(type='submit', value='Log that ish!')
+        input(type='submit', value='Click here to log in or Sign up!')

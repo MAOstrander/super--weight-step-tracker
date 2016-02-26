@@ -1,0 +1,22 @@
+{
+  "name": "super--weight-step-tracker",
+  "description": "Simple tracker for daily steps and weight",
+  "main": "server.js",
+  "authors": [
+    "Mathew Ostrander <mathew.ostrander@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/MAOstrander/super--weight-step-tracker",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

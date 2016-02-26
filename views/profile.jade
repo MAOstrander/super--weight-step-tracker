@@ -1,0 +1,18 @@
+extends ../templates/basic.jade
+
+block body
+  h1 Super Weight Tracker!
+
+  .input-form
+    form(method='POST')
+      .form-group
+        label Name
+        input(type='text', name='username', placeholder='Type Username Here' required)
+      .form-group
+        label Steps
+        input(type='number', name='steps', placeholder='How many steps did you take?')
+      .form-group
+        label Weight
+        input(type='number', name='weight', placeholder='How much do you weigh?')
+      .form-group
+        input(type='submit', value='Log that ish!')
